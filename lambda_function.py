@@ -47,7 +47,7 @@ def object_to_json(bucket, key):
 
 def json_flatten(json_data):
     try:
-        job_detail = list(flatsplode(json_data['data']['jobDetail']))
+        job_detail = list(flatsplode(json_data))
         df_job = pd.DataFrame(job_detail)
         for c in df_job.columns:
             if df_job[c].dtype == 'object':
